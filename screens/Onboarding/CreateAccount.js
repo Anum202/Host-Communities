@@ -86,7 +86,7 @@ const CreateAccount = ({ navigation }) => {
                                 onValueChange={(itemValue, itemIndex) => onChangeState(itemValue)}
                                 style={styles.picker}
                             >
-                                <Picker.Item label="Select State" value="Select State" style={state === "Select State" ? styles.defaultPickerLabelStyle : styles.pickerLabel} />
+                                <Picker.Item label="Select" value="Select" style={state === "Select" ? styles.defaultPickerLabelStyle : styles.pickerLabel} />
                                 {stateOptions.map((option) => (
                                     <Picker.Item label={option} value={option} key={option} style={styles.pickerLabel} />
                                 ))}
@@ -107,7 +107,7 @@ const CreateAccount = ({ navigation }) => {
                                 onValueChange={(itemValue, itemIndex) => onChangeLGA(itemValue)}
                                 style={styles.picker}
                             >
-                                <Picker.Item label="Select LGA" value="Select LGA" style={lga === "Select LGA" ? styles.defaultPickerLabelStyle : styles.pickerLabel} />
+                                <Picker.Item label="Select" value="Select" style={lga === "Select" ? styles.defaultPickerLabelStyle : styles.pickerLabel} />
                                 {lgaOptions[state] &&
                                     lgaOptions[state].map((option) => (
                                         <Picker.Item label={option} value={option} key={option} style={styles.pickerLabel} />
@@ -136,7 +136,7 @@ const CreateAccount = ({ navigation }) => {
                                 onValueChange={(itemValue, itemIndex) => onChangeGender(itemValue)}
                                 style={styles.picker}
                             >
-                                <Picker.Item label="Select Gender" value="Select Gender" style={gender === "Select Gender" ? styles.defaultPickerLabelStyle : styles.pickerLabel} />
+                                <Picker.Item label="Select" value="Select" style={gender === "Select" ? styles.defaultPickerLabelStyle : styles.pickerLabel} />
                                 {genderOptions.map((option) => (
                                     <Picker.Item label={option} value={option} key={option} style={styles.pickerLabel} />
                                 ))}
@@ -157,7 +157,7 @@ const CreateAccount = ({ navigation }) => {
                                 onValueChange={(itemValue, itemIndex) => onChangeAge(itemValue)}
                                 style={styles.picker}
                             >
-                                <Picker.Item label="Select Age" value="Select Age" style={age === "Select Age" ? styles.defaultPickerLabelStyle : styles.pickerLabel} />
+                                <Picker.Item label="Select" value="Select" style={age === "Select" ? styles.defaultPickerLabelStyle : styles.pickerLabel} />
                                 {ageOptions.map((option) => (
                                     <Picker.Item label={option} value={option} key={option} style={styles.pickerLabel}
                                     />

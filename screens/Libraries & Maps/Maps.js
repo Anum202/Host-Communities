@@ -1,11 +1,11 @@
-import { View, Text, TouchableOpacity, Image, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
 
 import Colors from '../../constants/Colors';
 
-const CDAProject = ({ navigation }) => {
+const Maps = ({ navigation }) => {
     return (
-        <View stye={styles.container}>
+        <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <SimpleLineIcons name="arrow-left" size={22} color="black" />
@@ -15,15 +15,11 @@ const CDAProject = ({ navigation }) => {
                     <MaterialCommunityIcons name="dots-vertical" size={24} color="black" style={styles.icon} />
                 </TouchableOpacity>
             </View>
-            <View style={styles.textContainer}>
-                <Text style={styles.mainText}>CDA Projects</Text>
-                <Text style={styles.additionalText}>Track CDA projects and see progress in real time.</Text>
-            </View>
         </View>
     )
 }
 
-export default CDAProject;
+export default Maps;
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -56,16 +52,5 @@ const styles = StyleSheet.create({
     icon: {
         marginLeft: 10,
     },
-    textContainer: {
-        paddingHorizontal: windowWidth * 0.06,
-    },
-    mainText: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    additionalText: {
-        fontSize: 13,
-        marginTop: windowHeight * 0.01,
-    },
-});
+})
 

@@ -3,9 +3,9 @@ import { MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
 
 import Colors from '../../constants/Colors';
 
-const CDAProject = ({ navigation }) => {
+const ReportsHomeScreen = ({ navigation }) => {
     return (
-        <View stye={styles.container}>
+        <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <SimpleLineIcons name="arrow-left" size={22} color="black" />
@@ -16,14 +16,14 @@ const CDAProject = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.mainText}>CDA Projects</Text>
-                <Text style={styles.additionalText}>Track CDA projects and see progress in real time.</Text>
+                <Text style={styles.mainText}>Reports</Text>
+                <Text style={styles.additionalText}>Report on CDA projects, violence and environmental degradation.</Text>
             </View>
         </View>
     )
 }
 
-export default CDAProject;
+export default ReportsHomeScreen;
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -31,7 +31,6 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Colors.lightBackgroundColor,
     },
     headerContainer: {
         flexDirection: 'row',
@@ -68,4 +67,5 @@ const styles = StyleSheet.create({
         marginTop: windowHeight * 0.01,
     },
 });
+
 

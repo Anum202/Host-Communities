@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { View, TextInput, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
 import { Ionicons, MaterialIcons, AntDesign, FontAwesome, EvilIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
 
-const TextInputComponent = ({ iconType, iconName, placeholder, value, onChangeText, keyboardType, autoCapitalize, secureTextEntry, style, }) => {
+const TextInputComponent = ({ iconType, iconName, placeholder, value, onChangeText, keyboardType, autoCapitalize, secureTextEntry, style }) => {
 
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -41,6 +41,11 @@ const TextInputComponent = ({ iconType, iconName, placeholder, value, onChangeTe
         else if (iconType === 'FontAwesome') {
             return (
                 <FontAwesome name={iconName} size={18} color={Colors.placeholderText} style={styles.icon} />
+            )
+        }
+        else if (iconType === 'image-icon') {
+            return (
+                <Image name={iconName} source={require('../assets/images/projectIcon.png')} style={styles.imgIcon} resizeMode='contain' />
             )
         }
     }
@@ -103,5 +108,12 @@ const styles = StyleSheet.create({
     toggleIcon: {
         position: "absolute",
         right: 8,
+    },
+    imgIcon: {
+        position: "absolute",
+        paddingLeft: windowWidth * 0.09,
+        paddingRight: 5,
+        width: 15,
+        height: 15,
     },
 });

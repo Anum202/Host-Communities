@@ -1,29 +1,45 @@
-import { View, Text, TouchableOpacity, Image, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
 
 import Colors from '../../constants/Colors';
+import NotificationCardComponent from '../../components/NotificationCardComponent';
 
-const CDAProject = ({ navigation }) => {
+const NotificationSettings = ({ navigation }) => {
     return (
-        <View stye={styles.container}>
+        <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <SimpleLineIcons name="arrow-left" size={22} color="black" />
                 </TouchableOpacity>
-                <Text style={styles.title}>CDA Project</Text>
+                <Text style={styles.title}>Settings</Text>
                 <TouchableOpacity style={styles.iconContainer}>
                     <MaterialCommunityIcons name="dots-vertical" size={24} color="black" style={styles.icon} />
                 </TouchableOpacity>
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.mainText}>CDA Projects</Text>
-                <Text style={styles.additionalText}>Track CDA projects and see progress in real time.</Text>
+                <Text style={styles.mainText}>Notification Settings</Text>
+                <Text style={styles.additionalText}>Set how you receive notifications from us.</Text>
             </View>
+            <NotificationCardComponent
+                notificationName='News & Updates'
+                additionalText='Receive notifications on recent news'
+                initialValue={true}
+            />
+            <NotificationCardComponent
+                notificationName='Reminders'
+                additionalText='Receive reminders on important stuffs'
+                initialValue={true}
+            />
+            <NotificationCardComponent
+                notificationName='Comments'
+                additionalText='Receive notifications on your comments'
+                initialValue={true}
+            />
         </View>
     )
 }
 
-export default CDAProject;
+export default NotificationSettings;
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -31,7 +47,6 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Colors.lightBackgroundColor,
     },
     headerContainer: {
         flexDirection: 'row',
@@ -67,5 +82,5 @@ const styles = StyleSheet.create({
         fontSize: 13,
         marginTop: windowHeight * 0.01,
     },
-});
+})
 
